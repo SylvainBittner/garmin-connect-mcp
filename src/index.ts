@@ -134,6 +134,20 @@ function createServer(env: GarminEnv) {
 		},
 	);
 
+server.registerTool(
+	"garmin_test_simple",
+	{
+		description: "Simple MCP discovery test.",
+		inputSchema: z.object({}),
+	},
+	async () => {
+		return textResult({
+			status: "ok",
+			message: "Second MCP tool successfully discovered.",
+		});
+	},
+);
+	
 	// ---------------------------------------------------------
 	// ACTIVITIES
 	// ---------------------------------------------------------
